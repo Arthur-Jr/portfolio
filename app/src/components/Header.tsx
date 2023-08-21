@@ -3,6 +3,7 @@ import Link from 'next/link';
 
 import profile from '../../public/profile.jpeg';
 import { links } from  '../constants/data';
+import Menu from './Menu';
 
 export default function Header() {
   return (
@@ -31,6 +32,8 @@ export default function Header() {
           ))}
         </ul>
       </nav>
+
+      <Menu />
     </header>
   )
 }
