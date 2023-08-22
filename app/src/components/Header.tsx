@@ -8,7 +8,7 @@ import Menu from './Menu';
 export default function Header() {
   return (
     <header 
-      className="flex items-center justify-between fixed min-w-full h-16 px-[4%] py-[3vw] shadow-xl bg-white"
+      className="flex items-center justify-between fixed min-w-full h-16 px-[4%] py-[3vw] shadow-xl bg-white z-10"
     >
       <section className="flex flex-row items-center justify-between w-[13.5rem]">
         <Image
