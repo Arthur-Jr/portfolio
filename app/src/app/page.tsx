@@ -1,7 +1,9 @@
+import { About } from "@/components";
+
 export default function Home() {
   return (
-    <main className="min-h-screen pt-20">
-      Hello
+    <main className="flex items-center justify-center flex-col h-full min-h-screen">
+      <About />
     </main>
   )
 }
