@@ -15,7 +15,7 @@ export default function Header() {
           src={profile}
           alt="profile pic"
           width={60}
-          className="rounded-full border-4 border-double border-gray-400 bg-gray-300" 
+          className="rounded-full border-4 border-double border-gray-200 bg-gray-200" 
         />
 
         <span className="uppercase font-bold text-lg italic">
