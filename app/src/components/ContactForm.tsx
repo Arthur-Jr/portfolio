@@ -5,7 +5,7 @@ import { Socials } from ".";
 
 export default function ContactForm() {
   const formInput = ['title', 'email'];
-  const [formData, setFormData] = useState({ title: '', email: '', subject: '' });
+  const [formData, setFormData] = useState({ title: '', email: '', message: '' });
   const [formMsg, setFormMsg] = useState('');
 
   const validateEmail = (email: string) => {
@@ -23,7 +23,7 @@ export default function ContactForm() {
   
     if (validateEmail(formData.email)) {
       setFormMsg('Email enviado com sucesso!');
-      setFormData({ title: '', email: '', subject: '' });
+      setFormData({ title: '', email: '', message: '' });
     } else {
       setFormMsg('Email inválido!');
     }
@@ -64,16 +64,16 @@ export default function ContactForm() {
         ))}
 
         <label
-          htmlFor="form-subject"
+          htmlFor="form-message"
           className="flex flex-col items-center justify-between w-[80%] font-semibold italic"
         >
-          SUBJECT
+          MESSAGE
           <textarea
             className="resize-none w-full h-[250px] p-3 rounded-xl"
-            name="subject"
-            id="form-subject"
-            placeholder="SUBJECT"
-            value={formData.subject}
+            name="message"
+            id="form-message"
+            placeholder="MESSAGE"
+            value={formData.message}
             onChange={(e) => handleFormInputChange(e.target)}
             required
           />
