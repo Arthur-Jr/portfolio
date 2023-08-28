@@ -4,8 +4,8 @@ import { FormEvent, useState } from "react";
 import { Socials } from ".";
 
 export default function ContactForm() {
-  const formInput = ['title', 'email'];
-  const [formData, setFormData] = useState({ title: '', email: '', message: '' });
+  const formInput = ['name', 'email'];
+  const [formData, setFormData] = useState({ name: '', email: '', message: '' });
   const [formMsg, setFormMsg] = useState('');
 
   const validateEmail = (email: string) => {
@@ -23,7 +23,7 @@ export default function ContactForm() {
   
     if (validateEmail(formData.email)) {
       setFormMsg('Email enviado com sucesso!');
-      setFormData({ title: '', email: '', message: '' });
+      setFormData({ name: '', email: '', message: '' });
     } else {
       setFormMsg('Email inválido!');
     }
@@ -54,7 +54,7 @@ export default function ContactForm() {
               className="w-[100%] p-3 rounded-xl"
               type="text"
               id={`form-${field}`}
-              placeholder={field.toUpperCase()}
+              placeholder={`Your ${field}`}
               name={field}
               value={formData[field as keyof typeof formData]}
               onChange={(e) => handleFormInputChange(e.target)}
@@ -72,7 +72,7 @@ export default function ContactForm() {
             className="resize-none w-full h-[250px] p-3 rounded-xl"
             name="message"
             id="form-message"
-            placeholder="MESSAGE"
+            placeholder="Your message"
             value={formData.message}
             onChange={(e) => handleFormInputChange(e.target)}
             required
