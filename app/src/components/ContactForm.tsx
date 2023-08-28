@@ -1,6 +1,7 @@
 'use client';
 
 import { FormEvent, useState } from "react";
+import { Socials } from ".";
 
 export default function ContactForm() {
   const formInput = ['title', 'email'];
@@ -39,7 +40,7 @@ export default function ContactForm() {
       </h1>
 
       <form
-        className=" flex flex-col items-center justify-around w-[90%] md:w-[50%] h-[600px] py-3 bg-primary-color rounded-2xl shadow-md"
+        className=" flex flex-col items-center justify-around w-[90%] md:w-[50%] h-[600px] py-3 bg-primary-color rounded-2xl shadow-md shadow-slate-400"
         onSubmit={(e) => handleFormSubmit(e) }
       >
         {formInput.map((field) => (
@@ -93,6 +94,8 @@ export default function ContactForm() {
           </span>
         }
       </form>
+
+      <Socials />
     </section>
   )
 }
