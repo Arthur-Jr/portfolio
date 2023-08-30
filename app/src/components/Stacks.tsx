@@ -6,7 +6,7 @@ import { stackData } from '@/constants/data';
 export default function Stacks() {
   return (
     <section
-      className="flex flex-col justify-center bg-white w-[87%] relative bottom-36 rounded-2xl shadow-md sm:w-[91%] md:flex-row scroll-mt-24"
+      className="flex flex-col justify-center bg-white w-[87%] relative bottom-36 rounded-2xl shadow-md shadow-slate-400 sm:w-[91%] md:flex-row scroll-mt-24"
       id="stacks"
     >
       {stackData.map(({ title, desciption, list, logo }) => (
