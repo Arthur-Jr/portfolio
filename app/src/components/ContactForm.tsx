@@ -1,7 +1,7 @@
 'use client';
 
 import { FormEvent, useState } from "react";
-import { Socials } from ".";
+import Socials from "./Socials";
 
 export default function ContactForm() {
   const formInput = ['name', 'email'];
@@ -19,25 +19,31 @@ export default function ContactForm() {
 
   const handleFormSubmit = (e: FormEvent) => {
     e.preventDefault();
-    const SEVEN_SECONDS = 7000;
-  
+
     if (validateEmail(formData.email)) {
-      setFormMsg('Email enviado com sucesso!');
-      setFormData({ name: '', email: '', message: '' });
+      fetch('/api/contact', { method: 'post', body: JSON.stringify(formData) })
+      .then(response => response.json())
+      .then((data: { message: string }) => {
+        setFormMsg(data.message);
+        setFormData({ name: '', email: '', message: '' });
+      });
     } else {
       setFormMsg('Email inválido!');
     }
-
-    setTimeout(() => {
-      setFormMsg('');
-    }, SEVEN_SECONDS)
+  
+    const SEVEN_SECONDS = 7000;
+    setTimeout(() => setFormMsg(''), SEVEN_SECONDS);
   }
 
   return (
     <section className="w-[100%] h-[900px] mt-[-60px] flex items-center flex-col">
-      <h1 className="text-[1.5rem] sm:text-[1.7rem] italic font-semibold mb-10 scroll-mt-20" id="contact">
+      <h1 className="text-[1.5rem] sm:text-[1.7rem] italic font-semibold scroll-mt-20" id="contact">
         Contato
       </h1>
+
+      <span className="mt-1 mb-8 text-sm italic text-center px-2">
+        Você pode entrar em contato pelo formulário ou enviar um email direto para <strong>arthurjr.dev@gmail.com</strong>
+      </span>
 
       <form
         className=" flex flex-col items-center justify-around w-[90%] md:w-[50%] h-[600px] py-3 bg-primary-color rounded-2xl shadow-md shadow-slate-400"
