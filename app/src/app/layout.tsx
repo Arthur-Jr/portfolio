@@ -1,7 +1,7 @@
 import './globals.css'
 import type { Metadata } from 'next'
 
-import { Header } from '@/components';
+import { Footer, Header } from '@/components';
 
 export const metadata: Metadata = {
   title: 'Portfolio',
@@ -14,6 +14,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body>
         <Header />
         {children}
+        <Footer />
       </body>
     </html>
   )

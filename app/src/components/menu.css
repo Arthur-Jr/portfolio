@@ -1,4 +1,4 @@
-@media only screen and (min-width: 670px) {
+@media only screen and (min-width: 710px) {
   header div {
     display: none;
   }
@@ -35,12 +35,14 @@
 /* General sidebar styles */
 .bm-menu {
   background: white;
+  border-left: 1px solid var(--primary-color);
+  border-bottom: 1px solid var(--primary-color);
   font-size: 1em;
   height: 190px !important;
   width: 150px;
   position: fixed;
   right: 0px;
-  top: 65px;
+  top: 64px;
 }
 
 /* Wrapper for item list */
