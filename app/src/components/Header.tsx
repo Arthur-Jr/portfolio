@@ -23,7 +23,7 @@ export default function Header() {
         </span>
       </section>
 
-      <nav className="flex w-96 max-[670px]:hidden">
+      <nav className="flex w-[26rem] max-[710px]:hidden">
         <ul className="flex flex-row justify-around w-full uppercase font-bold text-base tracking-[1px]">
           {links.map(({ name, hash }) => (
             <li key={hash} className="hover:text-primary-color">

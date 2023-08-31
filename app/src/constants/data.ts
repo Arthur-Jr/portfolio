@@ -18,6 +18,10 @@ export const links = [
   {
     name: 'contato',
     hash: '#contact'
+  },
+  {
+    name: 'socials',
+    hash: '#socials'
   }
 ]
 
