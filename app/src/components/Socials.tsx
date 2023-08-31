@@ -10,7 +10,7 @@ export default function Socials() {
  
   return (
     <div
-    className="hidden md:flex justify-between flex-col absolute left-[0px] top-[1650px] h-32 p-3 shadow-lg shadow-slate-400 bg-white"
+    className="flex justify-between w-24" 
     >
       <button
         type="button"
