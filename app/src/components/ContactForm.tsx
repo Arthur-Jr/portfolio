@@ -1,7 +1,6 @@
 'use client';
 
 import { FormEvent, useState } from "react";
-import Socials from "./Socials";
 
 export default function ContactForm() {
   const formInput = ['name', 'email'];
@@ -36,7 +35,7 @@ export default function ContactForm() {
   }
 
   return (
-    <section className="w-[100%] h-[760px] mt-[-60px] flex items-center flex-col">
+    <section className="w-[100%] h-[760px] flex items-center flex-col">
       <h1 className="text-[1.5rem] sm:text-[1.7rem] italic font-semibold scroll-mt-20" id="contact">
         Contato
       </h1>
