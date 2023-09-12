@@ -27,6 +27,6 @@ export async function POST(req: NextRequest, _res: NextResponse) {
     await client.messages.create(DOMAIN, messageData);
     return NextResponse.json({ status: 201, message: 'Email enviado com sucesso!' });
   } catch (err) {
-    return NextResponse.json({ status: 500, message: 'Tivemos algum problema com o envio do seu email!' });
+    return NextResponse.json({ status: 500, message: 'Algo deu Errado!' });
   }
 }

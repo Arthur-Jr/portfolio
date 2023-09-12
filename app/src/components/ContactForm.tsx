@@ -1,11 +1,12 @@
 'use client';
 
-import { FormEvent, useState } from "react";
+import { FormEvent, useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 
 export default function ContactForm() {
   const formInput = ['name', 'email'];
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
-  const [formMsg, setFormMsg] = useState('');
+  const [formMsg, setFormMsg] = useState({ message: '', status: 0 });
 
   const validateEmail = (email: string) => {
     const EMAIL_REGEX = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/;
@@ -22,20 +23,20 @@ export default function ContactForm() {
     if (validateEmail(formData.email)) {
       fetch('/api/contact', { method: 'post', body: JSON.stringify(formData) })
       .then(response => response.json())
-      .then((data: { message: string }) => {
-        setFormMsg(data.message);
+      .then((data: { message: string, status: number }) => {
+        setFormMsg({ message: data.message, status: data.status });
         setFormData({ name: '', email: '', message: '' });
       });
     } else {
-      setFormMsg('Email inválido!');
+      setFormMsg({ message: 'Email inválido!', status: 0 });
     }
   
     const SEVEN_SECONDS = 7000;
-    setTimeout(() => setFormMsg(''), SEVEN_SECONDS);
+    setTimeout(() => setFormMsg({ message: '', status: 0 }), SEVEN_SECONDS);
   }
 
   return (
-    <section className="w-[100%] h-[760px] flex items-center flex-col">
+    <section className="w-[100%] h-[760px] flex items-center flex-col mb-4">
       <h1 className="text-[1.5rem] sm:text-[1.7rem] italic font-semibold scroll-mt-20" id="contact">
         Contato
       </h1>
@@ -45,7 +46,7 @@ export default function ContactForm() {
       </span>
 
       <form
-        className=" flex flex-col items-center justify-around w-[90%] md:w-[50%] h-[600px] py-3 bg-primary-color rounded-2xl shadow-md shadow-slate-400"
+        className=" flex flex-col items-center justify-around w-[90%] md:w-[50%] h-[600px] py-3 bg-primary-color rounded-2xl shadow-md shadow-slate-400 mb-4"
         onSubmit={(e) => handleFormSubmit(e) }
       >
         {formInput.map((field) => (
@@ -90,15 +91,23 @@ export default function ContactForm() {
         >
           Submit
         </button>
-
-        { formMsg.length > 0 &&
-          <span
-            className="absolute p-3 rounded-lg bg-gray-500 text-white font-bold text-lg italic"
-          >
-            {formMsg}
-          </span>
-        }
       </form>
+
+      <AnimatePresence>
+        { formMsg.message.length > 0 &&
+          <motion.span
+            initial={{ opacity: 0, scale: 0.5 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.5 }}
+            exit={{ opacity: 0, scale: 0.5 }}
+            className={
+            `${formMsg.status === 201 ? 'bg-green-500' : 'bg-red-500'} text-white p-3 rounded-lg font-bold text-lg italic`
+            }
+          >
+            {formMsg.message}
+          </motion.span>
+        }
+      </AnimatePresence>
     </section>
   )
 }
