@@ -46,7 +46,7 @@ export default function ContactForm() {
       </span>
 
       <form
-        className=" flex flex-col items-center justify-around w-[90%] md:w-[50%] h-[600px] py-3 bg-primary-color rounded-2xl shadow-md shadow-slate-400 mb-4"
+        className=" flex flex-col items-center justify-around w-[90%] md:w-[75%] lg:w-[50%] h-[600px] py-3 bg-primary-color rounded-2xl shadow-md shadow-slate-400 mb-4"
         onSubmit={(e) => handleFormSubmit(e) }
       >
         {formInput.map((field) => (

@@ -1,0 +1,23 @@
+.projects-div-grid {
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 300px 300px 300px 300px;
+  row-gap: 10px;
+}
+
+@media only screen and (min-width: 768px) {
+  .projects-div-grid {
+    column-gap: 10px;
+    grid-template-columns: 40% 20% 40%;
+    grid-template-rows: 300px 300px;
+    row-gap: 10px;
+  }
+  
+  .item-0 {
+    grid-column: 1 / span 2;
+  }
+  
+  .item-3 {
+    grid-column: span 2;
+  }
+}
