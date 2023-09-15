@@ -1,5 +1,3 @@
-'use client';
-
 import Link from "next/link";
 import Image from "next/image";
 
@@ -15,14 +13,14 @@ export default function Projects() {
       </h1>
 
       <div className="w-full h-full mb-10 projects-div-grid">
-        {projects.map((project) => (
-          <div key={project.id} className={`item-${project.id} project-card`}>
+        {projects.map(({ siteLink, gihubLink, id, name, text, img }) => (
+          <div key={id} className={`item-${id} project-card`}>
             <div className="info-div">
-              <h2 className="project-name">{project.name}</h2>
-              <p className="project-text">{project.text}</p>
+              <h2 className="project-name">{name}</h2>
+              <p className="project-text">{text}</p>
               <div className="links-div">
-                <Link href={project.siteLink} target="_blank">Ver Site ➜</Link>
-                <Link href={project.gihubLink} target="_blank">Código ➜</Link>
+                <Link href={siteLink} target="_blank">Ver Site ➜</Link>
+                <Link href={gihubLink} target="_blank">Código ➜</Link>
               </div>
               <Image src={upArrow} alt="up arrow icon" width={19} className="info-div-arrow" />
             </div>
@@ -37,6 +35,3 @@ export default function Projects() {
     </section>
   )
 }
-
-
-// Ver Site ➜
