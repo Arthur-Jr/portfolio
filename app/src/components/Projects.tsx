@@ -7,7 +7,7 @@ import upArrow from "../../public/up-arrow-icon.svg";
 
 export default function Projects() {
   return (
-    <section className="mt-[-4rem] w-[93%] md:w-[85%] flex flex-col items-center mb-14">
+    <section className="mt-[-4rem] w-[93%] md:w-[85%] flex flex-col items-center mb-16">
       <h1 className="text-[1.5rem] sm:text-[1.7rem] mb-6 italic font-semibold scroll-mt-[5.5rem]" id="projects">
         Projetos
       </h1>
@@ -31,7 +31,7 @@ export default function Projects() {
       <span className=" mb-5 text-sm italic text-center px-2 mt-6">
         No meu <Link className="font-bold underline-offset-2 underline" href="https://github.com/Arthur-Jr" target="_blank">Github</Link> pode ser encontrado mais projetos!
       </span>
-      <span className="border-t-2 border-slate-300 w-[85%]"></span>
+      <span className="border-t-2 border-black/30 w-[85%]"></span>
     </section>
   )
 }
