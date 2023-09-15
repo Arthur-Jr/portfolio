@@ -10,18 +10,18 @@ export default function Socials() {
  
   return (
     <div
-    className="flex justify-between w-24" 
+    className="flex justify-between items-center w-20" 
     >
       <button
         type="button"
         onClick={() => opneSocial('https://github.com/Arthur-Jr')}
       >
         <Image
-          className="bg-black rounded-full hover:scale-110"
+          className="bg-black hover:scale-110"
           alt="Github logo"
           src={githubIcon}
-          width={40}
-          height={40}
+          width={30}
+          height={30}
         />
       </button>
 
@@ -30,11 +30,11 @@ export default function Socials() {
         onClick={() => opneSocial('https://www.linkedin.com/in/arthur-jr/')}
       >
         <Image
-          className="bg-black rounded-full hover:scale-110"
+          className="bg-black hover:scale-110"
           alt="Linkedin logo"
           src={linkedinIcon}
-          width={40}
-          height={40}
+          width={30}
+          height={30}
         />
       </button>
     </div>
