@@ -29,6 +29,8 @@ export const aboutMeText = `
   Minha jornada em desenvolvimento web começou em 2020 onde eu fiquei fascinado em como a programação resolve problemas de diferentes maneiras com diferentes ferramentas, dentro e fora do código, e como isso sempre gera um novo desafio e um novo aprendizado.
 `;
 
+export const socialLinks = { github: 'https://github.com/Arthur-Jr', linkedin: 'https://www.linkedin.com/in/arthur-jr/' };
+
 export const stackData = [
   {
     title: 'Front End',
