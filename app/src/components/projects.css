@@ -19,10 +19,29 @@
   background-size: 100% 100%;
 }
 
+.item-1 {
+  background: url(../../public/projectImg.png);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
+.item-2 {
+  background: url(../../public/projectImg.png);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
+.item-3 {
+  background: url(../../public/projectImg.png);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
 .info-div {
   align-items: center;
   background-color: rgba(0, 0, 0, 0.850);
   border-radius: 0 0 0.75rem 0.75rem;
+  cursor: default;
   display: flex;
   height: 40px;
   justify-content: space-between;
@@ -63,6 +82,7 @@
   display: none;
   font-weight: bold;
   font-style: italic;
+  text-align: start;
 }
 
 .info-div:hover .project-text {
@@ -87,20 +107,22 @@
   text-decoration: underline;
 }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 480px) {
+  .info-div:hover {
+    padding: 35px;
+  }
+}
+
+@media only screen and (min-width: 820px) {
   .projects-div-grid {
     column-gap: 15px;
     grid-template-columns: 40% 20% 40%;
-    grid-template-rows: 330px 330px;
+    grid-template-rows: 400px 400px;
     row-gap: 15px;
   }
 
   .info-div:hover {
-    padding: 30px 15px 15px;
-  }
-
-  .project-name {
-    margin-bottom: -50px;
+    padding: 15px;
   }
   
   .item-0 {
@@ -109,5 +131,11 @@
   
   .item-3 {
     grid-column: span 2;
+  }
+}
+
+@media only screen and (min-width: 968px) {
+  .info-div:hover {
+    padding: 30px;
   }
 }
