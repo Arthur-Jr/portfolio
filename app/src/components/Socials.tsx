@@ -1,7 +1,10 @@
 import Image from 'next/image';
+import Link from 'next/link';
 
 import linkedinIcon from '../../public/linkedin.svg';
 import githubIcon from '../../public/gitHubIcon.svg';
+import cvIcon from '../../public/cv-icon.svg';
+import { socialLinks } from '@/constants/data';
 
 export default function Socials() {
   const opneSocial = (url: string) => {
@@ -10,33 +13,45 @@ export default function Socials() {
  
   return (
     <div
-    className="flex justify-between w-24" 
+    className="flex justify-between items-center w-28"
     >
       <button
         type="button"
-        onClick={() => opneSocial('https://github.com/Arthur-Jr')}
+        onClick={() => opneSocial(socialLinks.github)}
+        title="Github"
       >
         <Image
-          className="bg-black rounded-full hover:scale-110"
+          className="bg-black hover:scale-110"
           alt="Github logo"
           src={githubIcon}
-          width={40}
-          height={40}
+          width={30}
+          height={30}
         />
       </button>
 
       <button
         type="button"
-        onClick={() => opneSocial('https://www.linkedin.com/in/arthur-jr/')}
+        onClick={() => opneSocial(socialLinks.linkedin)}
+        title="Linkedin"
       >
         <Image
-          className="bg-black rounded-full hover:scale-110"
+          className="bg-black hover:scale-110"
           alt="Linkedin logo"
           src={linkedinIcon}
-          width={40}
-          height={40}
+          width={30}
+          height={30}
         />
       </button>
+
+      <Link href="./cv.pdf" target="_blank" title="Currículo">
+        <Image
+            className="hover:scale-110"
+            alt="Currículo logo"
+            src={cvIcon}
+            width={30}
+            height={30}
+          />
+      </Link>
     </div>
   )
 }
