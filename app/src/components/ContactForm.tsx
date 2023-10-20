@@ -36,7 +36,7 @@ export default function ContactForm() {
   }
 
   return (
-    <section className="w-[100%] h-[760px] flex items-center flex-col mb-6">
+    <section className="w-[100%] h-[760px] flex items-center flex-col mb-6 min-[1480px]:h-[900px]">
       <h1 className="text-[1.5rem] sm:text-[1.7rem] italic font-semibold scroll-mt-20" id="contact">
         Contato
       </h1>
@@ -46,7 +46,7 @@ export default function ContactForm() {
       </span>
 
       <form
-        className=" flex flex-col items-center justify-around w-[90%] md:w-[75%] lg:w-[50%] h-[600px] py-3 bg-primary-color rounded-2xl shadow-md shadow-slate-400 mb-4"
+        className=" flex flex-col items-center justify-around w-[90%] md:w-[75%] lg:w-[50%] h-[600px] py-3 bg-primary-color rounded-2xl shadow-md shadow-slate-400 mb-4 min-[1480px]:h-[750px]"
         onSubmit={(e) => handleFormSubmit(e) }
       >
         {formInput.map((field) => (
