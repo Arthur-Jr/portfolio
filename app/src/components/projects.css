@@ -7,44 +7,43 @@
 
 .project-card {
   align-items: flex-end;
-  border: 1px dotted black;
+  border: 1px solid black;
   border-radius: 0.75rem;
   display: flex;
   height: 100%;
 }
 
 .item-0 {
-  background: url(../../public/projectImg.png);
+  background: url(../../public/projects/user-hub.png);
   background-repeat: no-repeat;
   background-size: 100% 100%;
 }
 
 .item-1 {
-  background: url(../../public/projectImg.png);
+  background: url(../../public/projects/recipes-img.png);
   background-repeat: no-repeat;
   background-size: 100% 100%;
 }
 
 .item-2 {
-  background: url(../../public/projectImg.png);
+  background: url(../../public/projects/Spotify-cln.png);
   background-repeat: no-repeat;
   background-size: 100% 100%;
 }
 
 .item-3 {
-  background: url(../../public/projectImg.png);
+  background: url(../../public/projects/schedule.png);
   background-repeat: no-repeat;
   background-size: 100% 100%;
 }
 
 .info-div {
   align-items: center;
-  background-color: rgba(0, 0, 0, 0.850);
+  background-color: rgba(0, 0, 0, 0.889);
   border-radius: 0 0 0.75rem 0.75rem;
   cursor: default;
   display: flex;
   height: 40px;
-  justify-content: space-between;
   width: 100%;
   padding: 10px;
 }
@@ -53,7 +52,6 @@
   border-radius: inherit;
   flex-direction: column;
   height: 100%;
-  justify-content: space-between;
   padding: 15px;
 }
 
@@ -71,6 +69,8 @@
   color: white;
   font-weight: bold;
   font-size: 18px;
+  margin-top: 15px;
+  margin-bottom: 30px;
 }
 
 .info-div:hover .project-name {
@@ -82,6 +82,7 @@
   display: none;
   font-weight: bold;
   font-style: italic;
+  margin-bottom: auto;
   text-align: start;
 }
 
@@ -96,6 +97,8 @@
   font-style: italic;
   justify-content: space-between;
   width: 165px;
+  margin-right: auto;
+  margin-top: auto;
   text-underline-offset: 4px;
 }
 
@@ -136,6 +139,10 @@
 
 @media only screen and (min-width: 968px) {
   .info-div:hover {
-    padding: 30px;
+    padding: 20px 15px 10px;
+  }
+
+  .project-text {
+    font-size: 1.17em;
   }
 }

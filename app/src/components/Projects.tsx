@@ -1,12 +1,12 @@
 'use client';
 
-import Link from "next/link";
 import Image from "next/image";
+import Link from "next/link";
 
-import "./projects.css";
-import { projects } from "@/constants/projects";
 import { socialLinks } from "@/constants/data";
+import { projects } from "@/constants/projects";
 import upArrow from "../../public/up-arrow-icon.svg";
+import "./projects.css";
 
 export default function Projects() {
   const openLink = (url: string, target: EventTarget) => {
@@ -30,8 +30,10 @@ export default function Projects() {
             onClick={(e) => openLink(siteLink, e.target)}
           >
             <div className="info-div">
-              <h2 className="project-name">{name}</h2>
-              <p className="project-text">{text}</p>
+              <div className="flex flex-col justify-around h-[80%]">
+                <h2 className="project-name">{name}</h2>
+                <p className="project-text">{text}</p>
+              </div>
 
               <div className="links-div">
                 <Link href={siteLink} target="_blank">Ver Site ➜</Link>
