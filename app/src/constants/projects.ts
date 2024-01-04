@@ -25,7 +25,7 @@ export const projects = [
   {
     id: 3,
     name: 'TV Shows Schedule',
-    text: 'Projeto Full Stack desenvolvido com next.js e next.js API Route. Nesse projeto desenvolvi um calendario de programas de tv, onde é possivel adicionar um programa que esteja atualmente indo ao ar. Esse projeto consome a mesma API que o user hub para lidar com as contas, logo é nescessario esperar os 3 minutos para acessar o back end, mas é possivel usar esse projeto sem uma conta.',
+    text: 'Projeto Full Stack desenvolvido com next.js e next.js API Route. Nesse projeto desenvolvi um calendario de programas de tv, onde é possivel adicionar um programa que esteja atualmente indo ao ar. Esse projeto consome a mesma API que o user hub para lidar com as contas, logo é nescessario esperar os 3 minutos para acessar o back end se for logar ou criar uma conta, mas é possivel usar esse projeto sem uma conta.',
     gihubLink: 'https://github.com/Arthur-Jr/schedule',
     siteLink: 'https://schedule-arthur-jr.vercel.app',
   }
